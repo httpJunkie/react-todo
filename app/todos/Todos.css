@@ -1,0 +1,91 @@
+/* Vertical Masonry Columns */
+.column-container {
+    width: 99%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+    padding-right: 1em;
+    border-bottom: 1px solid rgba(83, 210, 250, 0.5);
+  
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+  .column-item {
+    cursor: pointer;
+    color: #FFF;
+    background-color: rgba(43, 75, 117, 0.9);
+    display: inline-block;
+    padding: 8px;
+    min-height: 20px;
+    max-height: 100%;
+    width: 95%;
+    margin: 5px 0;
+    border-radius: 0px 0px 0px 0px;
+    border-left: 5px solid rgb(255, 114, 114); 
+  
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+  }
+  .column-item.completed {
+    border-left: 5px solid rgba(83, 210, 250, 0.5);
+    background-color: rgba(102,120,143, 0.3);
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  /* todo flex container */
+  .flex-container {
+    display: flex;
+  }
+  .todo-name {
+    width: 95%;
+  }
+  .todo-delete {
+    width: 5%;
+  }
+  .todo-delete:hover {
+    width: 5%;
+    color: rgba(255,255,255, 0.3)
+  }
+  
+  /* text box */
+  .todo-input {
+    width: 100%;
+    height: 50px;
+  }
+  .todo-input input#add-todo {
+    width: 100%;
+    height: 50px;
+    background: #404858;
+    border: none;
+    font-size: 1.25em;
+      color: #262626;
+    padding-left: 1em;
+    padding-right: 1em;
+    
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    
+    -webkit-transition: all .60s ease;
+       -moz-transition: all .60s ease;
+        -ms-transition: all .60s ease;
+         -o-transition: all .60s ease;
+            transition: all .60s ease;
+  }
+  
+  .todo-input input#add-todo::-webkit-input-placeholder,
+  .todo-input input#add-todo:-moz-placeholder,
+  .todo-input input#add-todo::-moz-placeholder,
+  .todo-input.todo-input input#add-todo:-ms-input-placeholder {  
+    color: #65737e;  
+  }
+  
+  .todo-input input#add-todo:focus, 
+  .todo-input input#add-todo:active {
+    outline: none;
+    background: #ffffff;
+  }
