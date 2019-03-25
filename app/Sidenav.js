@@ -5,15 +5,10 @@ function SideNav(props) {
   return (
     <div className={'sidenav ' + (props.menu ? 'show' : 'hide')}>
       <div className="sidenav-container">
-        <div className="nav-item">
-          <a href="#">Item One</a>
-        </div>
-        <div className="nav-item">
-          <a href="#">Item Two</a>
-        </div>
-        <div className="nav-item">
-          <a href="#">Item Three</a>
-        </div>
+        <div className="nav-item"><a href="#">Home</a></div>
+        <div className="nav-item"><a href="#">Destinations</a></div>
+        <div className="nav-item"><a href="#">Contact</a></div>
+        <div className="nav-item"><a href="#">Source Code</a></div>
       </div>
     </div>
   )
