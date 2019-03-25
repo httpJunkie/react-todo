@@ -1,5 +1,4 @@
-# Example Todo App Using React
+# Install Packages & Run 
 
-example application of how to build todo list based on todomvc with backend.
-
-this will be using docker compose, typescript and d3
+    npm install
+    npm start
