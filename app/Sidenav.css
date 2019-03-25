@@ -1,0 +1,11 @@
+.sidenav-container {
+  display: flex; /* or inline-flex */
+  flex-direction: column;
+}
+
+.nav-item {
+  height: 20px;
+  padding: 1em;
+  background-color: #efefef;
+  border-bottom: 1px solid #ccc;
+}

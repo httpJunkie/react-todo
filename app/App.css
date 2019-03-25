@@ -1,14 +1,64 @@
-/* Global App Related Styles */
 body {
   background-color: #1B2634;
 }
 
-.app {
+.app-container {
   font-family: 'Lato', sans-serif;
   color: rgba(83, 210, 250, 0.9); /* #53d2fa */
+  display: flex;
 }
-.padded {
+
+.sidenav, .sidenav.show {
+  width: 150px;
+  height: 100vh;
+  background-color: #ddd;
+}
+.sidenav.hide {
+  display: none;
+}
+
+.view { width: 100%; }
+.routes { padding: 1em; }
+
+.hoverable {
+  cursor: pointer; cursor: hand;
+  -webkit-transition: opacity 0.15s ease-in-out;
+  -moz-transition: opacity 0.15s ease-in-out;
+  -ms-transition: opacity 0.15s ease-in-out;
+  -o-transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
+  opacity: 1;
+}
+.hoverable:hover {
+  -webkit-transition: opacity 0.15s ease-in-out;
+  -moz-transition: opacity 0.15s ease-in-out;
+  -ms-transition: opacity 0.15s ease-in-out;
+  -o-transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
+  opacity: 0.5;
+}
+
+.topnav {
   padding: 1em;
+  background-color: rgb(50, 66, 88); /* #324258 */
+  border-bottom: 1px solid rgb(82, 99, 121); /* #526379 */
+  font-size: 18px;
+  height: 1em;
+}
+ul { padding: 0; }
+li { list-style-type: none; }
+.topnav ul {
+  display: flex;
+  margin: 0;
+}
+.topnav ul > li {
+  margin-right: 15px; 
+}
+.topnav ul > li > a {
+  color: rgb(151, 243, 255, 0.9); /* #97f3ff */
+}
+.active {
+  font-weight: bold;
 }
 
 button {
@@ -23,11 +73,4 @@ button {
 button:hover {
   background-color: rgba(83, 210, 250, 0.5); /* #53d2fa */
   color: rgb(8, 44, 54); /* #082c36 */
-}
-
-ul {
-  padding: 0;
-}
-li {
-  list-style-type: none;
 }
