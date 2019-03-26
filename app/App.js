@@ -16,7 +16,6 @@ import Todos from './todos/Todos';
 
 const App = () => {
   const menuOpenDefault = useMediaPredicate("(min-width: 415px)") ? true : false;
-
   const [menuOpen, setMenuOpen] = useState(menuOpenDefault);
   const toggleMenuOpen = () => setMenuOpen(!menuOpen);
 
@@ -24,26 +23,29 @@ const App = () => {
     <BrowserRouter>
       <div className="app-container">
         <div className="view">
-          <div className="topbar">
+          <header>
             <div className="logo">
               <span>LOGO</span>
             </div>
-            <div className="nav">
+            <nav>
               <ul>
                 <li><NavLink exact activeClassName="active" to="/">Home</NavLink></li>
                 <li><NavLink activeClassName="active" to="/todos">Todos</NavLink></li>
                 <li><a href="https://github.com/httpJunkie/react-todo">Source Code</a></li>
                 <li><FontAwesomeIcon icon="bars" className="hoverable" onClick={toggleMenuOpen} /></li>
               </ul>
-            </div>
-          </div>
-          <div className="routes">
+            </nav>
+          </header>
+          <main>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/todos" component={Todos} />
               <Route render={() => <h2 className="four-o-four">404 Page Not Found</h2>} />
             </Switch>
-          </div>
+          </main>
+          <footer>
+            <p>This is footz</p>
+          </footer>
         </div>
         <SideNav menu={menuOpen} />
       </div>

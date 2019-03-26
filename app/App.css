@@ -5,7 +5,7 @@ body {
 /* App Flexbox Conatiner and Items */
 .app-container {
   font-family: 'Lato', sans-serif;
-  color: rgba(83, 210, 250, 0.9); /* #53d2fa */
+  color:rgb(33, 37, 41);
   display: flex;
 }
 .view { width: 100%; }
@@ -14,18 +14,15 @@ body {
   height: 100vh;
   background-color: #ddd;
 }
-.sidenav.hide {
-  display: none;
-}
-
-
-.routes { padding: 1em; }
+.sidenav.hide { display: none; }
+main { padding: 1em; }
 
 /* Top Navigation */
-.topbar {
+header {
   display: flex;
   padding: 1em;
-  background-color: rgb(50, 66, 88); /* #324258 */
+  background: rgba(255, 255, 255, 0.85);
+  color: rgb(33, 37, 41);
   border-bottom: 1px solid rgb(82, 99, 121); /* #526379 */
   font-size: 18px;
   height: 1em;
@@ -33,27 +30,17 @@ body {
 .logo {
   width: 30%;
 }
-.nav {
+header nav {
   width: 70%;
   display: flex;
   justify-content: flex-end;
 }
 
-ul { padding: 0; }
-li { list-style-type: none; }
-.nav ul {
-  display: flex;
-  margin: 0;
-}
-.nav ul > li:not(:last-child) {
-  margin-right: 15px; 
-}
-.nav ul > li > a {
-  color: rgb(151, 243, 255, 0.9); /* #97f3ff */
-}
-.active {
-  font-weight: bold;
-}
+header nav ul { padding: 0; }
+header nav li { list-style-type: none; }
+header nav ul { display: flex; margin: 0; }
+header nav ul > li:not(:last-child) { margin-right: 15px; }
+header nav ul > li > a { color: rgb(33, 37, 41); }
 
 /* Utility Styles */
 button {
@@ -86,3 +73,4 @@ button:hover {
   transition: opacity 0.15s ease-in-out;
   opacity: 0.5;
 }
+.active { font-weight: bold; }

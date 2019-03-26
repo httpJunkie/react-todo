@@ -9,3 +9,33 @@
   background-color: #efefef;
   border-bottom: 1px solid #ccc;
 }
+
+.sidenav ul {
+  display: flex;
+  flex-direction: column;
+
+  display: block;
+  list-style-type: disc;
+
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+.sidenav li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  /* list-style-type: none; */
+  min-height: 55px;
+  background-color: #efefef;
+  border-bottom: 1px solid #ccc;
+}
+.sidenav li > a {
+  margin-left: 1em;
+}
+.sidenav li:last-child {
+  display: none;
+}
