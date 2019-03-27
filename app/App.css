@@ -9,12 +9,16 @@ body {
   display: flex;
 }
 .view { width: 100%; }
+
+/* How can we clean this up more */
 .sidenav, .sidenav.show {
   min-width: 150px;
   height: 100vh;
   background-color: #ddd;
 }
 .sidenav.hide { display: none; }
+
+
 main { padding: 1em; }
 
 /* Top Navigation */
@@ -27,20 +31,7 @@ header {
   font-size: 18px;
   height: 1em;
 }
-.logo {
-  width: 30%;
-}
-header nav {
-  width: 70%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-header nav ul { padding: 0; }
-header nav li { list-style-type: none; }
-header nav ul { display: flex; margin: 0; }
-header nav ul > li:not(:last-child) { margin-right: 15px; }
-header nav ul > li > a { color: rgb(33, 37, 41); }
+.logo { width: 30%; }
 
 /* Utility Styles */
 button {

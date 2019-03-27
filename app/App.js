@@ -1,55 +1,63 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
 import { useMediaPredicate } from 'react-media-hook';
 import './App.css';
 
-// Font Awesome Icons
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-library.add(faBars)
+/* 
+  If we want to build our site with all functional components 
+  and use the latest in React Hooks, we achieve that in our AppContext component.
+*/
 
-import SideNav from './Sidenav';
-import Home from './Home';
+/* In our App Component we just need to import the AppProvider */
+/* useState, useContext, useMediaPredicate */
+import { AppProvider, AppContext } from "./AppContext";
+
+/* View Components */
+import Home from './components/Home';
 import Todos from './todos/Todos';
 
+/* navigation Components*/
+import SideNav from './Sidenav';
+import TopNav from './Topnav';
+
 const App = () => {
-  const menuOpenDefault = useMediaPredicate("(min-width: 415px)") ? true : false;
-  const [menuOpen, setMenuOpen] = useState(menuOpenDefault);
-  const toggleMenuOpen = () => setMenuOpen(!menuOpen);
+  // We could also put all of our state right here without a provider and pass down through props
+  // This would be harder once it came to updating our state IMHO.
+
+  // We add the check for MediumPlus at the App level 
+  // and we append it to the class: `app-conainter`
+  let isMediumPlus = useMediaPredicate("(min-width: 600px)") ? false : true;
 
   return (
-    <BrowserRouter>
-      <div className="app-container">
-        <div className="view">
-          <header>
-            <div className="logo">
-              <span>LOGO</span>
-            </div>
-            <nav>
-              <ul>
-                <li><NavLink exact activeClassName="active" to="/">Home</NavLink></li>
-                <li><NavLink activeClassName="active" to="/todos">Todos</NavLink></li>
-                <li><a href="https://github.com/httpJunkie/react-todo">Source Code</a></li>
-                <li><FontAwesomeIcon icon="bars" className="hoverable" onClick={toggleMenuOpen} /></li>
-              </ul>
-            </nav>
-          </header>
-          <main>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/todos" component={Todos} />
-              <Route render={() => <h2 className="four-o-four">404 Page Not Found</h2>} />
-            </Switch>
-          </main>
-          <footer>
-            <p>This is footz</p>
-          </footer>
+    <AppProvider>
+      <BrowserRouter>
+        <div className={`app-container ${!isMediumPlus ? 'medium' : 'small'}`}>
+          <div className="view">
+
+            <header>
+              <div className="logo">
+                <span>LOGO</span>
+              </div>
+              <TopNav />
+            </header>
+
+            <main>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/todos" component={Todos} />
+                <Route render={() => <h2 className="four-o-four">404 Page Not Found</h2>} />
+              </Switch>
+            </main>
+
+            <footer>
+              <p>This is footz</p>
+            </footer>
+
+          </div>
+          <SideNav />
         </div>
-        <SideNav menu={menuOpen} />
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </AppProvider>
   )
 }
 
