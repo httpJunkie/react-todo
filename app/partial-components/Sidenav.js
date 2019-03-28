@@ -4,7 +4,7 @@ import './Sidenav.css';
 import Menu from './Menu';
 
 /* We need data from our context at this layer so that we can toggle the sidenav */
-import { AppContext } from "./AppContext";
+import { AppContext } from "../AppContext";
 
 const SideNav = () => {
   const context = useContext(AppContext);

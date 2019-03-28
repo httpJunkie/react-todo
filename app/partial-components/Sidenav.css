@@ -25,5 +25,9 @@
   display: none;
 }
 
+.active {
+  font-weight: bold;
+}
+
 .app-container.small .sidenav { display: auto; }
 .app-container.medium .sidenav { display: none; }

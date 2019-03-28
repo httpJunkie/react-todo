@@ -13,12 +13,12 @@ import './App.css';
 import { AppProvider, AppContext } from "./AppContext";
 
 /* View Components */
-import Home from './components/Home';
-import Todos from './todos/Todos';
+import Home from './view-components/Home';
+import Todos from './view-components/todos/Todos';
 
 /* navigation Components*/
-import SideNav from './Sidenav';
-import TopNav from './Topnav';
+import SideNav from './partial-components/Sidenav';
+import TopNav from './partial-components/Topnav';
 
 const App = () => {
   // We could also put all of our state right here without a provider and pass down through props

@@ -5,10 +5,10 @@
 }
   
 .topnav ul { padding: 0; }
-.topnav li { list-style-type: none; }
 .topnav ul { display: flex; margin: 0; }
+.topnav ul li { list-style-type: none; }
 .topnav ul > li:not(:last-child) { margin-right: 15px; }
-.topnav ul > li  a { color: rgb(33, 37, 41); }
+.topnav ul > li a { color: rgb(33, 37, 41); }
 
 .app-container.small .topnav ul > li.link { display: none; }
 .app-container.medium .topnav ul > li.link { display: auto; }

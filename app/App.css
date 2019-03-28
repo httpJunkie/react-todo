@@ -18,7 +18,10 @@ body {
 }
 .sidenav.hide { display: none; }
 
-
+.view {
+  display: flex;
+  flex-direction: column;
+}
 main { padding: 1em; }
 
 /* Top Navigation */
@@ -64,4 +67,3 @@ button:hover {
   transition: opacity 0.15s ease-in-out;
   opacity: 0.5;
 }
-.active { font-weight: bold; }
