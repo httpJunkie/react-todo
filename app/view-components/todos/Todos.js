@@ -1,8 +1,10 @@
-import React, { useReducer, useRef, useEffect } from 'react';
+import React, { useState, useReducer, useRef, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 import './Todos.css';
 
 import * as constants from './constants';
 import { todoReducer } from './todoReducer';
+import { isContext } from 'vm';
 
 const initialState = [...constants.TODO_SEED];
 // const initialState = [
@@ -13,6 +15,8 @@ const Todo = () => {
   const inputRef = useRef();
   const [todos, dispatch] = useReducer(todoReducer, initialState);
   const completedTodos = todos.filter(todo => todo.complete);
+
+  const [toHome, setToHome] = useState(false);
 
   useEffect(() => {
     // inputRef.current.focus();
@@ -36,10 +40,11 @@ const Todo = () => {
   }
   function clearTodos() {
     dispatch({ type: 'CLEAR_TODOS' });
+    setTimeout(() => setToHome(true), 2000) /* After clearing Todos, wait two secconds and then let's go back home */
   }
-
   return (
     <>
+      {toHome ? <Redirect to="/" /> : null}
       <div className="todo-input">
         <form onSubmit={addTodo}>
           <input ref={inputRef} type="search" id="add-todo" placeholder="Add Todo..." />
