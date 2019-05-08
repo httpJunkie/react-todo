@@ -11,7 +11,7 @@ import logo from './images/logo.png';
 
 /* In our App Component we just need to import the AppProvider */
 /* useState, useContext, useMediaPredicate */
-import { AppProvider, AppContext } from "./AppContext";
+import { AppProvider } from "./AppContext";
 
 /* View Components */
 import Home from './view-components/Home';
