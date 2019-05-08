@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useMediaPredicate } from 'react-media-hook';
 import './App.css';
+import logo from './images/logo.png';
 
 /* 
   If we want to build our site with all functional components 
@@ -36,7 +37,7 @@ const App = () => {
 
             <header>
               <div className="logo">
-                <span>LOGO</span>
+                <img src={logo} />
               </div>
               <TopNav />
             </header>
