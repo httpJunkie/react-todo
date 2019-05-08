@@ -7,8 +7,14 @@ body {
   font-family: 'Lato', sans-serif;
   color:rgb(33, 37, 41);
   display: flex;
+  height: 100vh;
 }
-.view { width: 100%; }
+main {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 60px auto 50px;
+}
 
 /* How can we clean this up more */
 .sidenav, .sidenav.show {
@@ -18,23 +24,35 @@ body {
 }
 .sidenav.hide { display: none; }
 
-.view {
-  display: flex;
-  flex-direction: column;
-}
-main { padding: 1em; }
-
 /* Top Navigation */
 header {
   display: flex;
-  padding: 1em;
+  height: 60px;
   background: rgba(255, 255, 255, 0.85);
   color: rgb(33, 37, 41);
   border-bottom: 1px solid rgb(82, 99, 121); /* #526379 */
   font-size: 18px;
-  height: 1em;
 }
-.logo { width: 30%; }
+.logo {
+  width: 30%;
+  margin: 1em;
+}
+.topnav {
+  margin: 1em;
+}
+
+section {
+  height: 100%;
+  padding: 1em;
+}
+
+footer {
+  height: 50px;
+  background-color: #efefef;
+}
+footer p {
+  margin-left: 1em;
+}
 
 /* Utility Styles */
 button {

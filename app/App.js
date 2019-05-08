@@ -32,7 +32,7 @@ const App = () => {
     <AppProvider>
       <BrowserRouter>
         <div className={`app-container ${!isMediumPlus ? 'medium' : 'small'}`}>
-          <div className="view">
+          <main>
 
             <header>
               <div className="logo">
@@ -41,19 +41,19 @@ const App = () => {
               <TopNav />
             </header>
 
-            <main>
+            <section>
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/todos" component={Todos} />
                 <Route render={() => <h2 className="four-o-four">404 Page Not Found</h2>} />
               </Switch>
-            </main>
+            </section>
 
             <footer>
-              <p>This is footz</p>
+              <p>The Todo Company &copy; 2019</p>
             </footer>
 
-          </div>
+          </main>
           <SideNav />
         </div>
       </BrowserRouter>

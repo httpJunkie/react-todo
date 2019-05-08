@@ -11,10 +11,7 @@ const AppProvider = (props) => {
   }
   const [app, setApp] = useState(appData);
 
-  {/* 
-    This is a component, it returns JSX, uses props.children 
-    to give access to child components 
-  */}
+  {/* This is a component, it returns JSX, uses props.children to give access to child components */}
   
   return (
     <AppContext.Provider value={app}>
