@@ -4,7 +4,6 @@ import './Todos.css';
 
 import * as constants from './constants';
 import { todoReducer } from './todoReducer';
-import { isContext } from 'vm';
 
 const initialState = [...constants.TODO_SEED];
 // const initialState = [
@@ -19,8 +18,7 @@ const Todo = () => {
   const [toHome, setToHome] = useState(false);
 
   useEffect(() => {
-    // inputRef.current.focus();
-    document.title = `You have ${completedTodos.length} items completed!`;
+    document.title = `${completedTodos.length} completed todos`;
   })
 
   function addTodo(event) {
@@ -40,8 +38,9 @@ const Todo = () => {
   }
   function clearTodos() {
     dispatch({ type: 'CLEAR_TODOS' });
-    setTimeout(() => setToHome(true), 2000) /* After clearing Todos, wait two secconds and then let's go back home */
+    setTimeout(() => setToHome(true), 2000)
   }
+
   return (
     <>
       {toHome ? <Redirect to="/" /> : null}
@@ -52,8 +51,7 @@ const Todo = () => {
       </div>
       <div className="column-container">
         {todos.map((todo) => (
-          <div className={`column-item ${todo.complete ? 'completed' : null}`}
-            key={todo.id}>
+          <div className={`column-item ${todo.complete ? 'complete' : ''}`} key={todo.id}>
             <div className="flex-container">
               <div className="todo-name" onClick={() => toggleComplete(todo.id)}>
                 {todo.name}
@@ -65,9 +63,7 @@ const Todo = () => {
           </div>
         ))}
       </div>
-      <button onClick={() => clearTodos()}>
-        CLEAR TODOS
-      </button>
+      <button onClick={() => clearTodos()}>CLEAR TODOS</button>
     </>
   );
 }
