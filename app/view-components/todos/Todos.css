@@ -30,7 +30,7 @@
           -ms-user-select: none;
               user-select: none;
   }
-  .column-item.completed {
+  .column-item.complete {
     border-left: 5px solid rgba(83, 210, 250, 0.5);
     background-color: rgba(102,120,143, 0.3);
     color: rgba(255, 255, 255, 0.5);
