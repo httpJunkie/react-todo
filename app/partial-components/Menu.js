@@ -2,11 +2,8 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AppContext } from "../AppContext";
 
-// Font Awesome Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-library.add(faBars)
+import './faImports';
 
 const Menu = () => {
   const context = useContext(AppContext);

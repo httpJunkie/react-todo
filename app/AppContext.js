@@ -1,20 +1,18 @@
 import React, { useState, createContext } from 'react';
 
 const AppContext = createContext();
-
 const AppProvider = (props) => {
-  const appData = {
+
+  const defaultState = {
     navOpen: false,
     toggleSidenav: (value) => {
-      setApp(appData => ({ ...appData, navOpen: value }))
+      setApp((data) => ({ ...data, navOpen: value }))
     }
   }
-  const [app, setApp] = useState(appData);
+  const [appData, setApp] = useState(defaultState);
 
-  {/* This is a component, it returns JSX, uses props.children to give access to child components */}
-  
   return (
-    <AppContext.Provider value={app}>
+    <AppContext.Provider value={appData}>
       {props.children}
     </AppContext.Provider>
   )

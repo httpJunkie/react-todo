@@ -13,13 +13,13 @@ const initialState = [...constants.TODO_SEED];
 const Todo = () => {
   const inputRef = useRef();
   const [todos, dispatch] = useReducer(todoReducer, initialState);
-  const completedTodos = todos.filter(todo => todo.complete);
+  const completedTodos = todos.filter((todo) => todo.complete); //Why not a Hook?
 
   const [toHome, setToHome] = useState(false);
 
   useEffect(() => {
     document.title = `${completedTodos.length} completed todos`;
-  })
+  });
 
   function addTodo(event) {
     event.preventDefault();
@@ -49,10 +49,10 @@ const Todo = () => {
           <input ref={inputRef} type="search" id="add-todo" placeholder="Add Todo..." />
         </form>
       </div>
-      <div className="column-container">
+      <div className="todo-container">
         {todos.map((todo) => (
-          <div className={`column-item ${todo.complete ? 'complete' : ''}`} key={todo.id}>
-            <div className="flex-container">
+          <div className={`todo-item ${todo.complete ? 'complete' : ''}`} key={todo.id}>
+            <div className="item-container">
               <div className="todo-name" onClick={() => toggleComplete(todo.id)}>
                 {todo.name}
               </div>

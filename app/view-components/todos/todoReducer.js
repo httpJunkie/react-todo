@@ -3,7 +3,7 @@ export const todoReducer = (state, action) => {
     case 'ADD_TODO': {
       return (action.name.length)
         ? [...state, {
-          id: state.length ? Math.max(...state.map(todo => todo.id)) + 1 : 0,
+          id: state.length ? Math.max(...state.map((todo) => todo.id)) + 1 : 0,
           name: action.name,
           complete: false
         }]

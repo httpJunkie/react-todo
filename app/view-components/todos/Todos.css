@@ -1,5 +1,5 @@
 /* Vertical Masonry Columns */
-.column-container {
+.todo-container {
     width: 99%;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
@@ -11,7 +11,7 @@
     -webkit-column-count: 2;
     column-count: 2;
   }
-  .column-item {
+  .todo-item {
     cursor: pointer;
     color: #FFF;
     background-color: rgba(43, 75, 117, 0.9);
@@ -30,14 +30,14 @@
           -ms-user-select: none;
               user-select: none;
   }
-  .column-item.complete {
+  .todo-item.complete {
     border-left: 5px solid rgba(83, 210, 250, 0.5);
     background-color: rgba(102,120,143, 0.3);
     color: rgba(255, 255, 255, 0.5);
   }
   
   /* todo flex container */
-  .flex-container {
+  .item-container {
     display: flex;
   }
   .todo-name {
